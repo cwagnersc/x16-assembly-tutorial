@@ -1,132 +1,61 @@
-# x16-assembly-tutorial
 # tutorial-assembly-x16
 
-A tutorial for learning 65C02 Assembly Language using the Commander X16.
-
 Um tutorial para aprender a Linguagem assembly 65C02 usando o Commander x16.
-
-This is a repo containing all the materials from my YouTube series. Available
-now are the following lessons:
 
 Este é um repositório contendo todo o material da minha série do YouTube. Agora
 estão disponíveis as seguintes lições:
 
-- Lesson 1: The Basics
-- 
 - Lição 1: O Básico
-- 
-- Lesson 2: Addressing Modes
-- 
 - lição 2: Modos de Endereçamento
-- 
-- Lesson 3: Branching and Subroutines
-- 
 - Lição 3: Ramificação e Subrotinas
-- 
-- Lesson 4: Arithmetic and Logic
-- 
 - Lição 4: Aritmética e Lógica
-- 
-- Lesson 5: The Stack
-- 
 - Lição 5: A Pilha
-- 
-- Lesson 6: A Bit Advanced
-- 
 - Lição 6: Um Pouco Avançado
-- 
-- Lesson 7: The Rest
-- 
 - Lição 7: O Resto
-- 
-- Lesson 8: Meet the Kernal
-- 
 - Lição 8: Conheça o Kernal
-
-- Lesson 9: Hello, VERA!
-- 
 - Lição 9: Olá, VERA!
-- 
-- Lesson 10: Interrupts
-- 
 - Lição 10: interrupções
-- 
-- Lesson 11: Advanced Math
-- 
 - Lição 11: Matemática Avançada
-- 
-- Lesson 12: Tiles
-- 
 - Lição 12: Ladrilhos
-- 
-- Lesson 13: PSG Sound
-- 
-- Lição 3: Som PSG
-- 
-- Lesson 14: Mouse and Joysticks
-- 
+- Lição 13: Som PSG
 - Lição 14: Mouse e Joystick
-- 
-- Lesson 15: Bitmaps
-- 
 - Lição 15: Bitmaps
-- 
-- Lesson 16: All in the Timing
-- 
 - Lição 16: Tudo no tempo
-- 
-- Lesson 17: FM Synthesis
-- 
 - Lição 17: Síntese FM
-- 
-- Lesson 18: Sprites
-- 
 - Lição 18: Sprites
-- 
-
-More to come!
 
 Mais a caminho
-
-Each lesson has its own directory here. Please feel free to do what you want
-with these code examples - it is all [free and open source](LICENSE).
 
 Cada lição tem seu próprio diretório aqui. por favor, sinta-se á vontade para
 fazer o que quiser com os códigos de exemplo - é tudo [livre e código aberto](LICENSE)
 
-# Building with Windows (Cygwin
 # Montando com Windows (Cygwin)
-
-The build toolchain for this project requires a GNU environment, which is
-natively available on most Linux and Unix (include Mac) platforms. For
-Windows, you will need a program called Cygwin that will provide a GNU
-userspace in Windows that will give you a Unix-like environment for development.
 
 A cadeia de construção para este projeto necessita de um ambiente GNU, que é
 nativamente disponível na maioria das plataforms Linux e Unix (inluindo Mac). Para
 Windows, você precisará de um programa chamdo Cygwin que disponibilizará um espaço
 de usuário GNU no Windows que dará um ambiente tipo Unix para desenvolvimento.
 
-## Installing and Configuring Cygwin
 ## Instalando e configurando Cygwin
 
-First, you will need to download the Cygwin setup program from here:
+Primeiro você precisa baixar o programa de setuo do Cygwin daqui:
 https://cygwin.com/setup-x86_64.exe
 
-When you run the program, it will ask you which packages you want to install.
-Make sure the following packages are selected:
+
+Quando você executa o programa, ele perguntará a você quais pacotes vocẽ deseja instalar.
+Tenha certeza que os seguintes pacotes estão selecionados:
 
 - git
 - gcc-core
 - make
 
-Then, when Cygwin is installed, open the Cygwin Terminal program (you can
-specify to have a shortcut put on your desktop during the install) and cd
-to whatever directory you want to maintain your workspace. In Cygwin, the
-drive letters are also second-level directories, so your C drive is /cygdrive/c/
-and your D drive is /cygdrive/d/, etc. If my Windows username is **Fred** and
-I want to put a "workspace" directory in my profile alongside my "Documents"
-directory, I can do the following:
+Então, quando o Cygwin estiver instalado, abra o programa Terminal Cygwin (você
+pode especificar que quer colocar um atalho na sua área de trabalho durante a
+instalação0 e mudar para qualquer diretório que quiser manter seu workspace.
+No Cygwin, as letras dos drives também são diretórios de segundo nível, então
+seu drive C é /cygdrive/c/ e o seu drive D é /cygdrive/d/, etc. Se meu nome
+de usuário é **Fred** e eu quiser colocar um diretório "workspace" em meu
+perfil ao lado do dietório "Documents", eu posso fazer o seguinte:
 
 ```
 $ cd /cygdrive/c/Users/Fred
@@ -134,28 +63,30 @@ $ mkdir workspace
 $ cd workspace
 ```
 
-There, you can use git to clone this repository with the following command:
+Lá, você pode usar o git para clonar este reposidtório com o seguinte comando:
 
 ```
 $ git clone https://github.com/SlithyMatt/x16-assembly-tutorial.git
 ```
 
-You will also need to clone the cc65 repo:
+Você também precisará clonar o repositório cc65:
+
 
 ```
 $ git clone https://github.com/cc65/cc65.git
 ```
 
-Now, you can first test your new build environment by building cc65:
+Agora, primeiro você pode testar seu nome ambiente de montagem ao compilar o cc65:
+
 
 ```
 $ cd cc65
 $ make
 ```
 
-This should create a "bin" subdirectory with all the cc65 tools you will need,
-like ca65.exe. You can either add this cc65/bin directory to your path, or add
-symbolic links within Cygwin in /usr/bin.
+Isso deve criar um subdiretório "bin" com todas as ferramentas cc65 que você precisará,
+como ca65.exe. Você pode adicionar este diretório cc65/bin ao seu pah, ou adicionar
+links simbólicos dentro do /usr/bin.
 
 ## cc65 Option 1: Changing Path
 
