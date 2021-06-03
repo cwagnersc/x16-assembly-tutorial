@@ -12,56 +12,103 @@ Este é um repositório contendo todo o material da minha série do YouTube. Ago
 estão disponíveis as seguintes lições:
 
 - Lesson 1: The Basics
+- 
 - Lição 1: O Básico
+- 
 - Lesson 2: Addressing Modes
+- 
 - lição 2: Modos de Endereçamento
+- 
 - Lesson 3: Branching and Subroutines
+- 
 - Lição 3: Ramificação e Subrotinas
+- 
 - Lesson 4: Arithmetic and Logic
+- 
 - Lição 4: Aritmética e Lógica
+- 
 - Lesson 5: The Stack
+- 
 - Lição 5: A Pilha
+- 
 - Lesson 6: A Bit Advanced
+- 
 - Lição 6: Um Pouco Avançado
+- 
 - Lesson 7: The Rest
+- 
 - Lição 7: O Resto
+- 
 - Lesson 8: Meet the Kernal
+- 
 - Lição 8: Conheça o Kernal
+
 - Lesson 9: Hello, VERA!
+- 
 - Lição 9: Olá, VERA!
+- 
 - Lesson 10: Interrupts
+- 
 - Lição 10: interrupções
+- 
 - Lesson 11: Advanced Math
+- 
 - Lição 11: Matemática Avançada
+- 
 - Lesson 12: Tiles
+- 
 - Lição 12: Ladrilhos
+- 
 - Lesson 13: PSG Sound
+- 
 - Lição 3: Som PSG
+- 
 - Lesson 14: Mouse and Joysticks
+- 
 - Lição 14: Mouse e Joystick
+- 
 - Lesson 15: Bitmaps
+- 
 - Lição 15: Bitmaps
+- 
 - Lesson 16: All in the Timing
+- 
 - Lição 16: Tudo no tempo
+- 
 - Lesson 17: FM Synthesis
+- 
 - Lição 17: Síntese FM
+- 
 - Lesson 18: Sprites
+- 
 - Lição 18: Sprites
+- 
 
 More to come!
+
 Mais a caminho
 
 Each lesson has its own directory here. Please feel free to do what you want
 with these code examples - it is all [free and open source](LICENSE).
 
-# Building with Windows (Cygwin)
+Cada lição tem seu próprio diretório aqui. por favor, sinta-se á vontade para
+fazer o que quiser com os códigos de exemplo - é tudo [livre e código aberto](LICENSE)
+
+# Building with Windows (Cygwin
+# Montando com Windows (Cygwin)
 
 The build toolchain for this project requires a GNU environment, which is
 natively available on most Linux and Unix (include Mac) platforms. For
 Windows, you will need a program called Cygwin that will provide a GNU
 userspace in Windows that will give you a Unix-like environment for development.
 
+A cadeia de construção para este projeto necessita de um ambiente GNU, que é
+nativamente disponível na maioria das plataforms Linux e Unix (inluindo Mac). Para
+Windows, você precisará de um programa chamdo Cygwin que disponibilizará um espaço
+de usuário GNU no Windows que dará um ambiente tipo Unix para desenvolvimento.
+
 ## Installing and Configuring Cygwin
+## Instalando e configurando Cygwin
 
 First, you will need to download the Cygwin setup program from here:
 https://cygwin.com/setup-x86_64.exe
