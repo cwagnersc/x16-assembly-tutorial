@@ -27,7 +27,7 @@ estão disponíveis as seguintes lições:
 Mais a caminho
 
 Cada lição tem seu próprio diretório aqui. por favor, sinta-se á vontade para
-fazer o que quiser com os códigos de exemplo - é tudo [livre e código aberto](LICENSE)
+fazer o que quiser com os códigos de exemplo - é tudo [livre e de código aberto](LICENSE)
 
 # Montando com Windows (Cygwin)
 
