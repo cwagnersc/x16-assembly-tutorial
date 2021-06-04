@@ -165,7 +165,6 @@ Isto deve criar um subdiretório "bin" com todas ferramentas cc65 que você prec
 como ca65.exe. Vocẽ precisará adicionar este diretório em seu PATH adicionando a seguinte
 linha ao ~/.bashrc:
 
-
 ```
 export PATH=$PATH:$HOME/workspace/cc65/bin
 ```
