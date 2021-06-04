@@ -88,27 +88,26 @@ Isso deve criar um subdiretório "bin" com todas as ferramentas cc65 que você p
 como ca65.exe. Você pode adicionar este diretório cc65/bin ao seu pah, ou adicionar
 links simbólicos dentro do /usr/bin.
 
-## cc65 Option 1: Changing Path
+## cc65 Opção 1: Alterando o Path
 
-Open up your Environment Variables control panel in your settings (you can find it by searching for "env"). Select the "Path" variable and click the "Edit..." button.
+Abra a tela de Variáveis de Ambiente do painel de controle em suas configurações (você pode encontrá-la pesquisando pot "ambiente"). Selecione a variável "Path" e clique no botão "Editar..."
 
-![Environment Variables control panel](env.png)
+![Variáveis de Ambiente painel de controle](env.png)
 
-Then, in the editor dialog that pops up, add a new entry for your cc65/bin directory.
-You can find it by clicking on the "Browse..." button.
+Então, no diálogo do editor que aparece, adicione uma nova entrada para o seu diretório cc65/bin.
+Você pode encontrá-lo clicando no botão "Navegar...".
 
-![Path Editor](path.png)
+![Editor de Path](path.png)
 
-Then click the "OK" button. You should be all set to run the cc65 tools from anywhere on Windows.
-If your Cygwin Terminal was left open during this change, you will need to close it
-and reopen it for the new environment to take effect.
+Então clique no botão "OK". Você deve estar preparado para executar as ferramentas cc65 de qualquer lugar do Windows.
+Se seu Terminal Cygwin foi deixado aberto durante esa mudança, você deve fechá-lo e reabrí-lo para que o novo ambiente tenha efeito.
 
-## cc65 Option 2: Adding Symbolic Links
+## cc65 Opção 2: Adicionando Links Simbólicos
 
-You can just add the cc65 tools that you need for the build as symbolic links to your Cygwin /usr/bin directory, which is already on the Cygwin bash path, but will not be on your general Windows
-path.
+Você pode apenas adicionar as ferramentas cc65 que você precisa para construir os links simbólicos no diretório /usr/bin do seu Cygwin, que já está pronto no path do bash do Cygwin, mas não está no seu path geral do Windows.
 
-Simply create the following links (you don't need to worry about superuser privileges in Cygwin):
+Simplesmente crie os segunites links (você não precisa se preocupar com privilégios de super usuário no Cygwin):
+
 
 ```
 $ cd /usr/bin
@@ -117,21 +116,22 @@ $ ln -s /cygdrive/c/Users/Fred/workspace/cc65/bin/cc65.exe
 $ ln -s /cygdrive/c/Users/Fred/workspace/cc65/bin/cl65.exe
 ```
 
-Your environment should be all set now.
-You can go into any of the Lesson directories and build the code just as you
-have seen it in the videos.
+Seu ambiente deve estar todo configurado agora.
+Você pode entrar no diretório de qualquer lição e construir o código da mesma
+forma vista nos vídeos.
 
-# Building with Debian/Ubuntu Linux
+# Construindo com Linux Debian/Ubuntu
 
-Chances are, you have most of what you need already in Linux, but to be sure,
-you can install all of the required packages in one command:
+Provavelmente, você tem a maioria do que é necessário no Linux, mas para ter certeza,
+você pode instalar todos os pacotes necessários em um comando:
+
 
 ```
 $ sudo apt-get install git build-essential
 ```
 
-Then, you should create a workspace directory to hold all of your local repo
-clones, like ~/workspace.
+Então você deve criar um diretório de workspace para guardar o clone de todo o seu 
+repositório local, como ~/workspace.
 
 ```
 $ cd
@@ -139,69 +139,72 @@ $ mkdir workspace
 $ cd workspace
 ```
 
-There, you can use git to clone this repository with the following command:
+Então, você pode usar o git para clonar este repositório com o seguinte comando:
+
 
 ```
 $ git clone https://github.com/SlithyMatt/x16-assembly-tutorial
 ```
 
-You will also need to clone the cc65 repo:
+Você também precisará clonar o repositório cc65:
+
 
 ```
 $ git clone https://github.com/cc65/cc65.git
 ```
 
-Now, you can first test your new build environment by building cc65:
+Agora, você primeiro pode testar seu novo ambiente de construção, construindo o cc65:
+
 
 ```
 $ cd cc65
 $ make
 ```
 
-This should create a "bin" subdirectory with all the cc65 tools you will need,
-like ca65.exe. You will need to add this directory to your PATH by adding the following
-line to ~/.bashrc:
+Isto deve criar um subdiretório "bin" com todas ferramentas cc65 que você precisará,
+como ca65.exe. Vocẽ precisará adicionar este diretório em seu PATH adicionando a seguinte
+linha ao ~/.bashrc:
+
 
 ```
 export PATH=$PATH:$HOME/workspace/cc65/bin
 ```
 
-To make this environment take hold, you will need to close and reopen your terminal.
-Then you can go into any of the Lesson directories and build the code just as you
-have seen it in the videos. **Please note** that if you already had the release
-build of cc65 installed that it will not work with the build scripts here, as
-they do not have X16 support built in. You will need to build the latest commit
-yourself. When you do this, make sure that you uninstall the release build of
-cc65 or at least remove it from your PATH. You should verify that the correct
-version is going to run with this simple command:
+Para fazer com que esse ambiente funcione, você precisará fechar e reabrir seu terminal.
+Então você pode entrar no diretório de qualquer Lição e construir o código da mesma forma
+vista nos vídeos. **Por favor, note** que se você já tiver o lançamento atual do cc65 instalado
+que ele não funcionará com os scripts de construção aqui, já que o mesmo não tem suporte ao X16
+embutido. Você mesmo precisará construir o último commit. Quando fizer isso tenha certeza de desinstalar
+o cc65 previamente instalado ou ao menos removẽ-lo do do PATH. Você precisa verificar que a versão
+correta será executadas com este simples comando:
 
 ```
 which cl65
 ```
 
-If this does not print out the location of the version you just built, you need
-to get your PATH in the correct order.
+Se isso não imprimir a localização da versão que você construiu, você precisa
+configurar o seu PATH corretamente.
 
-# Installing the Commander X16 Emulator
+# Instalando o Emulador do Commander X16
 
-You can download pre-built binaries from the official website: https://www.commanderx16.com/forum/files/
+Você pode baixar binários pré-construídos do site oficial: https://www.commanderx16.com/forum/files/
 
-Or, you can build the emulator and the ROM image yourself from the GitHub repos:
+Ou você mesmo pode construir o emulador e a imagem da ROM do repositório GitHub:
 - https://github.com/commanderx16/x16-emulator
 - https://github.com/commanderx16/x16-rom
 
-If you followed the instructions above to build and install gcc and cc65, you are all
-set to build both of those repos already. **Please note** that building the Windows emulator
-using Cygwin is not recommended, and at the very least requires additional
-environmental setup. It is *highly* recommended to use the release build of the
-Windows emulator or to use the cross-platform build environment on a Mac if you
-absolutely need a custom build. Using
-mingw32/64 on Linux has not been done successfully, either.
 
-For convenience, I recommend putting the emulator directory on your path to make your
-workflow exactly as seen in these videos.
+Se você seguiu as instruções acima para construir e instalar o cc65, você está já pronto
+para construir para ambos aqueles repositórios. **Por favor, note** que não é recomendável
+construir o emulador para Windows usando o Cygwin, e pelo menos requer configuração adicional
+do ambiente. É *altamente* recomendado usar a construção lançada do emulator para Windows ou
+usar o ambiente construído em plataforma cruzada em um Mac se você precisar de uma construção
+personalizada. usando mingw32/64 no Linux não tem sido bem-sucedido, de qualquer forma.
 
-# Further Reading
+Para conveniência, recomendo colocar o diretório do emulador no seu path para fazer seu fluxo
+de trabalho exatamente como visto nos vídeos.
+
+# Leitura Aicional
 
 - https://en.wikipedia.org/wiki/Hexadecimal
 - https://en.wikipedia.org/wiki/Endianness
