@@ -8,7 +8,7 @@ ZP_PTR_1 = $30
 ZP_PTR_2 = $32
 ZP_DATA  = $34
 
-   jmp start         ; absolute
+   jmp start         ; absoluto
 
 data:
 .byte $01,$23,$45,$67,$89,$AB,$CD,$EF
@@ -17,46 +17,46 @@ results:
 .byte 0,0,0
 
 start:
-   ; copy first three bytes of data to ZP_DATA
-   lda data          ; absolute
-   sta ZP_DATA       ; zero page
-   ldx #1            ; immediate
-   lda data,x        ; absolute indexed with X
-   sta ZP_DATA,x     ; zero page indexed with X
-   txa               ; implied (transfer X to A)
-   tay               ; implied (transfer A to Y)
-   iny               ; implied (increment Y)
-   lda data,y        ; absolute indexed with Y
-   sta ZP_DATA,y     ; zero page indexed with Y
+   ; copia os três primeiros bytes de dados para ZP_DATA
+   lda data          ; absoluto
+   sta ZP_DATA       ; página zero
+   ldx #1            ; imediato
+   lda data,x        ; absoluto indexado com X
+   sta ZP_DATA,x     ; página zero indexado com X
+   txa               ; implícito (transfere X para A)
+   tay               ; implícito (transfere A para Y)
+   iny               ; implícito (incrementa Y)
+   lda data,y        ; absoluto indexado com Y
+   sta ZP_DATA,y     ; página zero indexado com Y
 
-   ; point ZP_PTR_1 to beginning of data
-   lda #<data        ; immediate address low byte
-   sta ZP_PTR_1      ; zero page
-   lda #>data        ; immediate address high byte
-   sta ZP_PTR_1+1    ; zero page calculated
+   ; aponta ZP_PTR_1 para o começo dos dados
+   lda #<data        ; endereço imediato byte menos significativo
+   sta ZP_PTR_1      ; página zero
+   lda #>data        ; endereço imediato byte mais significativo
+   sta ZP_PTR_1+1    ; página zero calculado
 
-   ; point ZP_PTR_2 to midpoint of data
-   lda #<(data+4)    ; immediate calculated address low byte
-   sta ZP_PTR_2      ; zero page
-   lda #>(data+4)    ; immediate calculated address high byte
-   sta ZP_PTR_2+1    ; zero page calculated
+   ; aponta ZP_PTR_2 para o ponto central do dado
+   lda #<(data+4)    ; endereço imediato calculado byte menos significativo
+   sta ZP_PTR_2      ; página zero
+   lda #>(data+4)    ; enderço imediato calculado byte mais significativo
+   sta ZP_PTR_2+1    ; página zero calculado
 
-   ; Copy data to results via ZP pointers
-   lda (ZP_PTR_1)    ; zero page indirect
-   sta results       ; absolute
-   inx               ; implied
-   lda (ZP_PTR_1,x)  ; zero page indexed indirect
-   sta results+1     ; absolute calculated
-   lda (ZP_PTR_1),y  ; zero page indirect indexed with Y
-   sta results,y     ; absolute indexed with Y
+   ; Copia dados para resultados via ponteiros ZP
+   lda (ZP_PTR_1)    ; página zero indireto
+   sta results       ; absoluto
+   inx               ; implícito
+   lda (ZP_PTR_1,x)  ; página zero indireto indexado
+   sta results+1     ; absoluto calculado
+   lda (ZP_PTR_1),y  ; página zero indireto indexado com Y
+   sta results,y     ; absoluto indexado com Y
 
-   jmp (lookup_ptr)  ; absolute indirect
+   jmp (lookup_ptr)  ; absoluto indireto
 
 lookup_ptr:
 .addr lookup
 
 lookup:
-   jmp (jmp_table,x) ; abolute indexed indirect
+   jmp (jmp_table,x) ; aboluto indexado indireto
 
 jmp_table:
 .addr start,return
