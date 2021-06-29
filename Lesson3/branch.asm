@@ -13,7 +13,7 @@ data:
 .byte $01,$23,$45,$67,$89,$AB,$CD,$EF
 
 start:
-   ; branching if less than (N set)
+   ; ramifica se mnor que (N setado)
    ldx #0
 n_loop:
    lda data,x
@@ -29,7 +29,7 @@ next_n:
    lda #NEWLINE
    jsr CHROUT
 
-   ; branching if carry (C set)
+   ; ramifica se "vai-um" (C setado)
    ldx #0
 c_loop:
    lda data,x
@@ -46,7 +46,7 @@ next_c:
    lda #NEWLINE
    jsr CHROUT
 
-   ; branching if overflow (V set)
+   ; ramifica se transborda (V setado)
    ldx #0
 v_loop:
    lda data,x
