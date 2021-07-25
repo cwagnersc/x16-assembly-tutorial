@@ -13,7 +13,7 @@ data:
 .byte $01,$23,$45,$67,$89,$AB,$CD,$EF
 
 start:
-   ; ramifica se mnor que (N setado)
+   ; ramifica se menor que (N setado)
    ldx #0
 n_loop:
    lda data,x
@@ -50,7 +50,7 @@ next_c:
    ldx #0
 v_loop:
    lda data,x
-   clc
+   clcie
    adc #$55
    bvs next_v
    txa
