@@ -45,7 +45,7 @@ print_regs:
    php
    pha
    phx
-   php ; push P again for quick retrieval
+   php ; empilha P novamente para recuperação rápida
    jsr print_hex
    lda #SPACE
    jsr CHROUT
@@ -60,11 +60,11 @@ print_regs:
    tsx
    txa
    clc
-   adc #6 ; calculate SP from before JSR
+   adc #6 ; calcula SP de antes do JSR
    jsr print_hex
    lda #SPACE
    jsr CHROUT
-   pla ; pull earlier P into A
+   pla ; desempilha P anterior em A
    jsr print_hex
    lda #NEWLINE
    jsr CHROUT
@@ -75,13 +75,13 @@ print_regs:
 
 
 print_hex:
-   pha	   ; push original A to stack
+   pha	   ; empilha A original para a pilha
    lsr
    lsr
    lsr
    lsr      ; A = A >> 4
    jsr print_hex_digit
-   pla      ; pull original A back from stack
+   pla      ; desempilha A original da pilha
    and #$0F ; A = A & 0b00001111
    jsr print_hex_digit
    rts
