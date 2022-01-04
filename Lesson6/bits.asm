@@ -111,13 +111,13 @@ print:
    rts
 
 print_hex:
-   pha	   ; push original A to stack
+   pha	   ; empilha o A original para A pilha
    lsr
    lsr
    lsr
    lsr      ; A = A >> 4
    jsr print_hex_digit
-   pla      ; pull original A back from stack
+   pla      ; puxa o A original de volta da pilha
    and #$0F ; A = A & 0b00001111
    jsr print_hex_digit
    rts
@@ -125,11 +125,11 @@ print_hex:
 print_hex_digit:
    cmp #$0A
    bpl @letter
-   ora #$30    ; PETSCII numbers: 1=$31, 2=$32, etc.
+   ora #$30    ; números PETSCII : 1=$31, 2=$32, etc.
    bra @print
 @letter:
    clc
-   adc #$37		; PETSCII letters: A=$41, B=$42, etc.
+   adc #$37		; letras PETSCII : A=$41, B=$42, etc.
 @print:
    jsr CHROUT
    rts
