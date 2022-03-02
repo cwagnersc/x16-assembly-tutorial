@@ -203,7 +203,7 @@ personalizada. usando mingw32/64 no Linux não tem sido bem-sucedido, de qualque
 Para conveniência, recomendo colocar o diretório do emulador no seu path para fazer seu fluxo
 de trabalho exatamente como visto nos vídeos.
 
-# Leitura Aicional
+# Leitura Adicional
 
 - https://en.wikipedia.org/wiki/Hexadecimal
 - https://en.wikipedia.org/wiki/Endianness
